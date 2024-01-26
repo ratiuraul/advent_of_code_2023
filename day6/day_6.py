@@ -1,4 +1,4 @@
-PATH = '/Users/Raul/Documents/Workspace/advent_of_code/'
+PATH = '/Users/aratiu/Documents/Workspace/advent_of_code_2023/'
 import math
 
 

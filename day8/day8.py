@@ -1,4 +1,7 @@
-PATH = '/Users/Raul/Documents/Workspace/advent_of_code/'
+from platform import node
+
+
+PATH = '/Users/aratiu/Documents/Workspace/advent_of_code_2023/'
 
 
 def read_input(puzzle):
@@ -16,28 +19,16 @@ for node_info in data:
         '=')[1].strip().replace('(', '').replace(')', '')
     input_nodes[content] = tuple(map(str, neighbours.split(', ')))
 
-class Node:
-    def __init__(self, content, left, right):
-        self.content = content
-        self.left = left
-        self.right = right
-
-
-root = None
-while input_nodes:
-    if not root:
-        node_content = input_nodes.keys[0]
-        left, right = input_nodes[node_content]
-        root = Node(content=node_content, left=left, right=right)
-        del input_nodes[node_content]
-# for node_content in input_nodes:
-#     left, right = input_nodes[node_content]
-#     if not root:
-#         root = Node(content=node_content, left=left, right=right)
-#     elif node_content == root.left :
-
-
-distance = 0
-instructions = instructions * len(tree)
-print('hre')
-# for node, instruction in zip (tree, instructions):
+current = 'AAA'
+count = 0
+instruction_index = 0
+instructions = instructions*len(list(input_nodes.keys()))
+while current != 'ZZZ':
+    count += 1
+    instruction = instructions[instruction_index]
+    if instruction == 'L':
+        current = input_nodes[current][0]
+    else:
+        current = input_nodes[current][1]
+    instruction_index += 1
+print(count)
