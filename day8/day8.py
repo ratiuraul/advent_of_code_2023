@@ -1,6 +1,3 @@
-from platform import node
-
-
 PATH = '/Users/aratiu/Documents/Workspace/advent_of_code_2023/'
 
 
